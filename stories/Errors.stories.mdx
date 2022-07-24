@@ -1,0 +1,33 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Error Messages" />
+
+# Error Messages
+
+## E001 Incompatible Scale
+
+`E001 - Incompatible scale for a <${componentName} />. Are you missing the 'scaleType="band"' in your <Axis /> or <Scale /> component?`
+
+# Warning Messages
+
+Sometimes you may encounter an error message within chart-it which is usually down to some bad configuration. Often these will appear in the console as warnings. This page details all the known warnings to help you diagnose the problem.
+
+## W001 Scale is too small
+
+`The scale appears too small for the dataset. Are you missing the `aggregate={true}` in your <Axis /> or <Scale /> component?`
+
+This warning indicates that some of the values that need plotting fall outside the range of the scale. While the chart can be plotted, some data may not be visible in the chart.
+
+**Cause:** The cause of this is usually that you're showing aggregated data (such as a stacked column chart) but the scale doesn't know it needs to sum the values when calculating the extents of the scale.
+
+**Fix:** Add an `aggregate={true}` prop to either the `<Axis>` or `<Scale>` component. The error message should detail the fields affected to help you determine which Axis or Scale is affected.
+
+## W002 Duplicate Values
+
+`W002 - There are duplicate values in the ${field} field. This may cause rendering artifacts with a <${componentName}>.`
+
+This warning indicates that there were unexpected duplicate values along an axis (within the same series). For some charts this is perfectly acceptable (such as a Scatter where more than 1 point can share the same x value). However for many charts such as Line or Column charts, this could lead to a rendering artifiact where you attempt to render 2 items at that same point.
+
+**Cause:** Within the field mentioned there were duplicate values (e.g. multiple x values of 5 - `{ x: 5, y: 2 }, { x: 5, y: 3 }`) which the plot selected can not support.
+
+**Fix:** Choose a different plot type, or filter out the duplicate records from the dataset.

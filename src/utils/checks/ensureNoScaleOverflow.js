@@ -11,7 +11,8 @@ const ensureNoScaleOverflow = (scale, data, fields) => {
     const maxValue = d3.max(data.map((d) => fields.reduce((sum, key) => sum + d[key], 0)));
     if (maxValue > scale.domain()[1]) {
         console.warn(
-            "The scale appears too small for the dataset. Are you missing the `aggregate={true}` in your <Axis /> or <Scale /> component?"
+            "W001 - The scale appears too small for the dataset. Are you missing the `aggregate={true}` in your <Axis /> or <Scale /> component?",
+            fields
         );
 
         return false;

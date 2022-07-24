@@ -7,7 +7,7 @@
 const ensureBandScale = (scale, componentName) => {
     if (!scale.bandwidth) {
         console.error(
-            `Incompatible scale for a <${componentName} />. Are you missing the 'scaleType="band"' in your <Axis /> or <Scale /> component?`
+            `E001 - Incompatible scale for a <${componentName} />. Are you missing the 'scaleType="band"' in your <Axis /> or <Scale /> component?`
         );
 
         return false;

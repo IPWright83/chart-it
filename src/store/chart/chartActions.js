@@ -7,10 +7,18 @@ import { themes } from "../../themes";
  * @param  {Object} margin  The margin for the chart
  * @return {Object}         A redux action object
  */
-const setDimensions = (width, height, margin) => ({
-    type: "CHART.SET_DIMENSIONS",
-    payload: { width, height, margin },
-});
+const setDimensions = (width, height, margin) => {
+    if (!margin) {
+        // TODO: Margin is incorrect shape
+        // Margin is not provided
+        console.warn();
+    }
+
+    return {
+        type: "CHART.SET_DIMENSIONS",
+        payload: { width, height, margin },
+    };
+};
 
 /**
  * Sets the scale for this field in the Redux store
@@ -20,7 +28,9 @@ const setDimensions = (width, height, margin) => ({
  * @return {Object}                 A redux action object
  */
 const setScales = (fields, scale, fromAxis) => (dispatch) => {
+    // TODO log this case?
     if (!scale) return;
+
     dispatch({
         type: "CHART.SET_SCALES",
         payload: { fields, scale, fromAxis },
@@ -72,10 +82,13 @@ const setAnimationDuration = (duration) => ({
  * @param  {Array}  data An array of the data for the chart
  * @return {Object}      A redux action object
  */
-const setData = (data = []) => ({
-    type: "CHART.SET_DATA",
-    payload: data,
-});
+const setData = (data = []) => {
+    // TODO: Enforce arrays
+    return {
+        type: "CHART.SET_DATA",
+        payload: data,
+    };
+};
 
 const chartActions = {
     setDimensions,

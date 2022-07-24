@@ -1,3 +1,5 @@
+// TODO: Validate shape of each object
+
 /**
  * Sets the mouse move event as being active in the store
  * @param  {Object} mouseEventArgs  The event arguments from the mouse event

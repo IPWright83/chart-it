@@ -11,7 +11,7 @@ import { areValuesUnique } from "../areValuesUnique";
 const ensureValuesAreUnique = (data, field, componentName) => {
     if (areValuesUnique(data.map((d) => d[field])) === false) {
         console.warn(
-            `There are duplicate values in the ${field} field. This may cause rendering artifacts with a <${componentName}>.`
+            `W002 - There are duplicate values in the ${field} field. This may cause rendering artifacts with a <${componentName}>.`
         );
 
         return false;
