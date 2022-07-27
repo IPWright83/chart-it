@@ -1,0 +1,140 @@
+.g-axis {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+}
+
+.g-gridlines {
+    pointer-events: none;
+}
+
+.g-gridlines .domain {
+    display: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+}
+
+.g-gridlines.left .tick:first-of-type {
+    display: none;
+}
+
+.g-gridlines.bottom .tick:first-of-type {
+    display: none;
+}
+
+.g-gridlines.right .tick:last-of-type {
+    display: none;
+}
+
+.g-gridlines.top .tick:last-of-type {
+    display: none;
+}
+
+.chart-it.axis-title {
+    text-anchor: middle;
+    font-size: 14px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+}
+
+.fo .virtual-canvas {
+        position: absolute;
+        opacity: 0;
+        zindex: 10000;
+}
+
+.g-background rect {
+    fill: none;
+    pointer-events: all;
+}
+
+.chart-it.marker {
+    stroke-width: 2;
+    pointer-events: none;
+}
+
+.g-crosshair line {
+    pointer-events: none;
+}
+
+.chart-it.indicator-circle {
+    width: 10px;
+    height: 10px;
+    margin-top: 4px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+.chart-it.indicator-square {
+    height: 10px;
+    width: 10px;
+    margin-top: 4px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.chart-it.indicator-line {
+    width: 10px;
+    height: 3px;
+    margin-top: 7px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.chart-it.tooltip-item {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    pointer-events: none;
+}
+
+.chart-it.tooltip-values {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.chart-it.tooltip-series-name {
+    margin-right: 15px;
+    max-width: 215px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chart-it.tooltip {
+    padding: 8px;
+    max-width: 300px;
+    border: thin solid #ccc;
+    background: #fff;
+    opacity: 0.8;
+}
+
+.g-plot.area {
+    fill-opacity: 0.8;
+    pointer-events: none;
+}
+
+.g-polygon {
+    pointer-events: none;
+}
+
+.customAxis .tick:nth-child(3n) line,
+.customAxis .tick:nth-child(3n + 1) line {
+  stroke-dasharray: 30;
+  stroke-dashoffset: 22;
+}
+
+.customAxis .tick text {
+  transform: translate(22px, -12px);
+}
+
+
+/*# sourceMappingURL=main.12d2d995.css.map*/
